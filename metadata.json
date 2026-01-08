@@ -1,0 +1,9 @@
+{
+  "name": "Bozor - Commercial Grade Uzbek Marketplace",
+  "description": "A full-featured digital marketplace for the Uzbekistan market with video commerce, AI search, and advanced vendor management.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

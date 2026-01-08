@@ -1,11 +1,31 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# Bozor - Production Marketplace Setup
 
-  <h1>Built with AI Studio</h2>
+## Prerequisites
+- VPS (Ubuntu 22.04+)
+- Docker & Docker Compose
+- Domain name pointed to VPS IP
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Deployment Steps
+1. **Clone Repository**: `git clone <repo_url> && cd bozor`
+2. **Configure Environment**: 
+   - `cp .env.example .env`
+   - Edit `.env` with your production secrets and `API_KEY`.
+3. **One-Command Deploy**:
+   ```bash
+   docker-compose up -d --build
+   ```
+4. **SSL Setup**:
+   ```bash
+   sudo apt install certbot python3-certbot-nginx
+   sudo certbot --nginx -d bozor.uz -d www.bozor.uz
+   ```
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Architecture
+- **Frontend**: Next.js (React 19) + Tailwind CSS.
+- **Backend**: NestJS (Node.js) + PostgreSQL.
+- **Caching**: Redis for session and product metadata.
+- **AI**: Gemini 2.5/3 for search grounding and recommendations.
 
-</div>
+## API Documentation
+Access Swagger docs at `https://api.bozor.uz/docs`
